@@ -74,7 +74,7 @@ class App extends React.Component {
 
         />
         <TodoForm 
-          value={this.todo}
+          value={this.state.todo}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         /> 
