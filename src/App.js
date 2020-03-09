@@ -65,18 +65,36 @@ class App extends React.Component {
   }
 
 
+  cross = (taskID) => {
+    this.setState({
+      tasks: this.state.tasks.slice().map(task => {
+        if(task.id === taskID){
+            task.completed = !task.completed
+            console.log('completed task?', task.completed)
+            return task
+        }
+        else{
+          return task
+        }
+
+      })
+    })
+    
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <TodoList 
           tasks={this.state.tasks}
-
+          cross={this.cross}
         />
         <TodoForm 
           value={this.state.todo}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
+        
         /> 
       </div>
     );

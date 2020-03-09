@@ -5,11 +5,11 @@ import Todo from './Todo.js'
 
 
 const TodoList = (props) => {
-    const { tasks } = props
+    const { tasks,  cross } = props
     return(
         <div>
            { tasks.map(task => (
-               <Todo task={task} key={task.id}/>
+               <Todo task={task} key={task.id} cross={cross}/>
            ))}
         </div>
     )
