@@ -1,7 +1,7 @@
 import React from 'react'
 
 const TodoForm = (props) => {
-    const { handleChange, handleSubmit, value } = props 
+    const { handleChange, handleSubmit, value, tasksLeft} = props 
 
     return(
         <div>
@@ -17,7 +17,7 @@ const TodoForm = (props) => {
                     />
                 </label>
                 <button onClick={handleSubmit}>Add NewTask</button>
-                <button>Delete Completed</button>
+                <button onClick={tasksLeft}>Delete Completed</button>
             </form>
         </div>
     )

@@ -79,7 +79,14 @@ class App extends React.Component {
 
       })
     })
-    
+  }
+
+  tasksLeft = (e) => {
+    e.preventDefault()
+    const pendingTasks = this.state.tasks.filter(task => (
+      task.completed === false
+    ))
+    this.setState({ tasks: pendingTasks})
   }
 
   render() {
@@ -94,7 +101,7 @@ class App extends React.Component {
           value={this.state.todo}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
-        
+          tasksLeft={this.tasksLeft}
         /> 
       </div>
     );
